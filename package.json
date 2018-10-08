@@ -1,0 +1,28 @@
+{
+  "name": "worker-app",
+  "version": "1.0.0",
+  "description": "Sample Node app with services orchestrated using docker-compose.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node",
+    "redis",
+    "mysql",
+    "rabbitmq",
+    "db",
+    "cache",
+    "queue",
+    "docker"
+  ],
+  "author": "Glad Chinda <gladxeqs@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "amqplib": "^0.5.2",
+    "express": "^4.16.3",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.6.1",
+    "redis": "^2.8.0"
+  }
+}
