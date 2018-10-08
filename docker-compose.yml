@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+
+	app:
+		build: .
+		restart: always
+		environment:
+			PORT: 1347
+			NODE_ENV: development
+			NPM_CONFIG_LOGLEVEL: info
+		expose:
+			- 1347
+		port:
+			- 1347:1347
+		links:
+			- db:mysql
+			- cache:redis
+			- queue:rabbitmq
+
+	db:
+		image: mysql
+		restart: always
+		environment:
+			MYSQL_ROOT_PASSWORD: password
+		expose:
+			- 3306
+
+	cache:
+		image: redis
+		restart: always
+		expose:
+			- 6379
+
+	queue:
+		image: rabbitmq
+		restart: always
+		expose:
+			- 5672
